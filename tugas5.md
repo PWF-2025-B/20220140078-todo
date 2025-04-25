@@ -1,17 +1,13 @@
 # Tugas 5
 
-## 1. Todo Create
+## 1. Todo Search
+![Alt text](screenshot/tugas5/caridata.png)
 
-![Alt text](screenshoot\tugas5\Screenshot%2025-04-25%210654.png)
+## 2. Todo Search Result
+![Alt text](screenshot/tugas5/hasilcari.png)
 
-## 2. Todo Created
-
-![Alt text](screenshoot\tugas5\Screenshot%2025-04-25%210735.png)
-
-## 3. User Search
-
-![Alt text](screenshoot\tugas5\Screenshot%2025-04-25%210748.png)
+## 3. User Create
+![Alt text](screenshot/tugas5/tambahdata.png)
 
 ## 4. User Search Result
-
-![Alt text](screenshoot\tugas5\Screenshot%2025-04-25%210621.png)
+![Alt text](screenshot/tugas5/hasiltambah.png)

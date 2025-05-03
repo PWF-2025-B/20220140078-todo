@@ -5,6 +5,7 @@ use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TodoController;
 
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -36,5 +37,11 @@ Route::get('/user', [    \App\Http\Controllers\UserController::class,
 ])->name('user.index');
 Route::delete('/user/{user}', [UserController::class, 'destroy'])->name('user.destroy');
 Route::resource('todo', TodoController::class)->except(['show']);
+
+Route::middleware(['auth', 'admin'])->group(function () {
+    Route::resource('user',UserController::class)->except(['show']);
+    Route::patch('/user/{user}/makeadmin', [UserController::class, 'makeAdmin'])->name('user.makeadmin');
+    Route::patch('/user/{user}/removeadmin', [UserController::class, 'removeAdmin'])->name('user.removeadmin');
+});
 
 require __DIR__.'/auth.php';

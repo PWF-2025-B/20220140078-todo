@@ -42,6 +42,7 @@
                         <tr>
                             <th class="px-6 py-3">No</th>
                             <th class="px-6 py-3">Name</th>
+                            <th class="px-6 py-3">Todo</th>
                             <th class="px-6 py-3 text-center">Actions</th>
                         </tr>
                     </thead>
@@ -54,6 +55,9 @@
                                         class="font-medium text-blue-600 dark:text-blue-400 hover:underline">
                                         {{ $category->name }}
                                     </a>
+                                </td>
+                                <td class="px-6 py-4">
+                                    {{ $category->todos_count }}
                                 </td>
                                 <td class="px-6 py-4 text-center">
                                     <div class="flex justify-center gap-2 flex-wrap">

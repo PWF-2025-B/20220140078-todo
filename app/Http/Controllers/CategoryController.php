@@ -3,13 +3,18 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use App\Models\Category;
 
 class CategoryController extends Controller
 {
     public function index()
     {
-        $categories = Category::withCount('todos')->get();
+        // $categories = Category::withCount('todos')->get();
+        $categories = Category::withCount('todos')
+            ->where('user_id', Auth::id())
+            ->get();
+
         return view('category.index', compact('categories'));
     }
 
@@ -21,7 +26,12 @@ class CategoryController extends Controller
     public function store(Request $request)
     {
         $request->validate(['name' => 'required|string|max:255']);
-        Category::create(['name' => ucfirst($request->name)]);
+
+        Category::create([
+            'name' => ucfirst($request->name),
+            'user_id' => Auth::id(),
+        ]);
+
         return redirect()->route('category.index')->with('success', 'Category created.');
     }
 

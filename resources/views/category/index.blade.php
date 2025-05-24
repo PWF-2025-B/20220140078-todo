@@ -42,7 +42,7 @@
                         <tr>
                             <th class="px-6 py-3">No</th>
                             <th class="px-6 py-3">Name</th>
-                            <th class="px-6 py-3">Todo</th>
+                            <th class="px-6 py-3">Todo</th>;;
                             <th class="px-6 py-3 text-center">Actions</th>
                         </tr>
                     </thead>
